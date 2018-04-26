@@ -1,9 +1,9 @@
 # Senior Project
-name: Honglie Hu
+Name: Honglie Hu
 
-senior project: a geographical data visualization website.
+Senior Project: a geographical data visualization website.
 
-code files:
+Code Files:
 
 index.html: the mainpage of the website.
 
