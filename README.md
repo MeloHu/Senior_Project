@@ -7,7 +7,7 @@ index.html: the mainpage of the website.
 
 styles.css: all CSS styles of the mainpage. 
 
-heatmapCSV.php: process data from CSV data file and display datavisualization through heatmaps. 
+heatmapCSV.php: for CSV data file, to process the file and the data, and to display data visualization through heatmaps. 
 
-heatmapXML.php: process data from XML data file and display datavisualization through heatmaps.
+heatmapXML.php: for XML data file, to process the file and the data, and to display data visualization through heatmaps.
 
