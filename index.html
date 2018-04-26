@@ -1,0 +1,94 @@
+<!-- reference: 
+https://www.sanwebe.com/2014/08/css-html-forms-designs/comment-page-2
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> City Data Visualization </title>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<script type="text/javascript">
+
+	// to submit form information to corresponding webpage 	
+	function OnSubmitForm()
+	{
+	  if(document.getElementById('existingfile').value == 'XML Heat Maps')
+	  {
+	   document.myform.action ="heatmapXML.php";
+	  }
+	  else
+	  if(document.getElementById('existingfile').value  == 'CSV Heat Maps')
+	  {
+	    document.myform.action ="heatmapCSV.php";
+	  }
+	  return true;
+	}
+
+	// to change form content in terms of user's choice 
+	function FormStyle() {
+	    if (document.getElementById('xmlfile').checked) 
+	    {
+	    	document.getElementById('xmlform').style.visibility = 'visible';
+	        document.getElementById('csvform').style.visibility = 'hidden';
+	    }
+	    if (document.getElementById('csvfile').checked) 
+	    {
+	    	document.getElementById('csvform').style.visibility = 'visible';
+	    	document.getElementById('xmlform').style.visibility = 'hidden';
+		}
+	}
+	</script>
+
+	<h1 style="text-align:center; color:white">City Data Visualization</h1>
+	<div class="form-style">	
+		
+	<!-- form content  -->
+	<form  name = "myform" method="post" enctype="multipart/form-data" onsubmit="return OnSubmitForm();">
+		<fieldset>
+		<div class="form-group c2">
+		<legend><span class="number">1</span> Basic File Infos </legend>
+
+		<lable > XML File </lable>
+		<input type="radio" onclick="javascript:FormStyle();" name="fstyle" id="xmlfile">
+
+		<lable> CSV File </lable>
+		<input type="radio" onclick="javascript:FormStyle();" name="fstyle" id="csvfile">
+    
+    	<div id="xmlform" style="visibility:hidden">
+		<p class="serif"> Tag Name of Element </p>
+		<input type="text" name="field1"  id="c1" value="cases">
+		<p class="serif"> Tag Name of Coordinates </p>
+		<input type="text" name="field2" id="c2" value="location">
+    	</div>
+
+    	<div id="csvform" style="visibility:hidden">
+    	<p class="serif"> Attribute Name of Coordinates </p>
+		<input type="text" name="field1"  id="c1" value="Location">
+    	</div>
+		</div>   
+		</fieldset>
+
+		<fieldset>
+		<legend><span class="number">2</span> Choose Data Visualization Map:</legend>
+		<select id="existingfile" name="field4">
+		  <option value="XML Heat Maps">XML Heat Maps</option>
+		  <option value="CSV Heat Maps">CSV Heat Maps</option>
+		</select>  
+		</fieldset>
+
+		<fieldset>	
+		<legend><span class="number">3</span> Upload Your Own File </legend>
+		<div class="form-group c2" style="text-align:center;">
+		<input type="file" name="file" id="file" class="inputfile" />
+		<label for="file">Upload the File</label>
+		</div>
+		</fieldset>
+
+		<input type="submit" name="submit" value="Apply"/>
+	</form>
+	</div>
+</body>
