@@ -1,5 +1,7 @@
 # Senior Project
-my senior project: a geographical data visualization website.
+name: Honglie Hu
+
+senior project: a geographical data visualization website.
 
 code files:
 
